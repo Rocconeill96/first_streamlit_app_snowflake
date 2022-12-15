@@ -29,7 +29,6 @@ streamlit.text(fruityvice_response)
 
 #display fruityvice api response 
 streamlit.header('Fruityvice Fruit Advice!')
-streamlit.text(fruityvice_response.json()) #writes data to screen
 
 #take the json version of the of the response and normalize 
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
