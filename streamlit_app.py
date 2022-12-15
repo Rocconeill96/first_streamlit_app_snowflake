@@ -51,6 +51,8 @@ streamlit.dataframe(my_data_rows)
 add_my_fruit = streamlit.text_input('What fruit would you like to add?', 'jackfruit')
 streamlit.write('Thanks for adding', add_my_fruit)
 
-import requests
-fruit_added_response = requests.get('https://fruityvice.com/api/fruit/'+ add_my_fruit)
-fruit_added_normalized = pd.json_normalize(fruit_added_response.json())
+my_cur.execute("insert into fruit_load_list_values ('from streamlit')")
+
+# import requests
+# fruit_added_response = requests.get('https://fruityvice.com/api/fruit/'+ add_my_fruit)
+# fruit_added_normalized = pd.json_normalize(fruit_added_response.json())
