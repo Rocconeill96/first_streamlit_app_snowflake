@@ -33,7 +33,14 @@ streamlit.header('Fruityvice Fruit Advice!')
 #take the json version of the of the response and normalize 
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 
-#table out put
+#table output
 streamlit.dataframe(fruityvice_normalized)
+
+#text entry box
+fruit_choice = streamlit.text_input('What fruit would you like information about?', 'Kiwi')
+streamlit.write('The user entered', fruit_choice)
+
+fruityvice_response = requests.get('https://fruityvice.com/api/fruit/' + fruit_choice)
+
 
 
