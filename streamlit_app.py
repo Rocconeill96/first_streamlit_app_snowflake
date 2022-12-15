@@ -39,7 +39,7 @@ try:
 except URLerror as e:
    streamlit.error()
     
-streamlit.header("The fruit load list contains:")
+streamlit.header("View Our Fruit List - Add Your Favourites!")
 #snowflake functions 
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
@@ -71,9 +71,9 @@ streamlit.stop()
 
 
 #allow end user to add a fruit to the list
-streamlit.write('Thanks for adding', add_my_fruit)
+# streamlit.write('Thanks for adding', add_my_fruit)
 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 # import requests
 # fruit_added_response = requests.get('https://fruityvice.com/api/fruit/'+ add_my_fruit)
